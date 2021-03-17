@@ -1,0 +1,113 @@
+commit b28eb0514f5a0a3b28ad239b6550fb1fe588c16f
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 14:16:23 2021 +0200
+
+    Poisto ja rename, git tulkitsee väärinpäin
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b9e09e3240ba21b16d47c96385d478be589f0750
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 14:12:41 2021 +0200
+
+    Lisättiin file1, file2, file3
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit db6850b3a41e3f46acf709be27abc0aabd573d72
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 13:26:03 2021 +0200
+
+    -p testi
+
+ eka.txt    | 4 +++-
+ kolmas.txt | 2 ++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+commit 50ec9f518e3fc44488e25a1aac53d36a779bb215
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 13:24:30 2021 +0200
+
+    Nimenvaihto
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d55498c1be23a13a2f8aa05e3915557568a2da30
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 13:23:45 2021 +0200
+
+    Poistettiin toinen
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 70858bd9ee2718a8aca6b95415507ef3a5f46811
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 13:21:02 2021 +0200
+
+    Poistoa ja lisäystä
+
+ tiedosto.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit d3fdd8346ccc5229ddef5f38a51adf5eb9538f53
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 13:19:58 2021 +0200
+
+    Lisättiin paljon tekstiä
+
+ tiedosto.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 6a536b288d04399845203f51e0550080e9eee364
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 13:08:42 2021 +0200
+
+    I'm stuff
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 10b604aa17a7b67af9e0f20c90274fcb7d2e0b56
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 13:07:50 2021 +0200
+
+    Muutoksia 2 ja 3een
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 2a15c8cb7910bd26ef4a8ceac739b0d55c7acaa1
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 13:06:47 2021 +0200
+
+    Lisättiin kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 33198082e027f741f57a5136701bca5acf5db23c
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 12:56:42 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 5a6e74c791e36cd775c2603c8e9844450ad6d531
+Author: lassisav <lassi.savolainen@helsinki.fi>
+Date:   Wed Mar 17 12:44:44 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
