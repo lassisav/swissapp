@@ -1,3 +1,7 @@
-# This is a header
+# Ohjelmistotekniikka, harjoitustyö
 
-This is completely normal text, which contains **bold parts** as well as *italic parts.*
+## Tehtävät
+
+#### Viikko 1
+[gitlog.txt]{https://github.com/lassisav/swissapp/blob/main/laskarit/viikko1/gitlog.txt}
+[komentorivi.txt]{https://github.com/lassisav/swissapp/blob/main/laskarit/viikko1/komentorivi.txt}
