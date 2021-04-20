@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package swissapp.swissapp.fileHandling;
+package swissapp.swissapp.filehandling;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,7 +19,7 @@ import java.util.Scanner;
  *
  * @author lassisav
  */
-public class fileHandler {
+public class FileHandler {
     static Scanner scan;
     public static int setupDir(String name) throws FileNotFoundException, IOException {
         File temp = new File("");
@@ -36,26 +36,26 @@ public class fileHandler {
         File tourneyList = new File(tourneyListFileName);
         scan = new Scanner(tourneyList);
         String lastLine = "0 noTourneys";
-        while(scan.hasNext()) {
+        while (scan.hasNext()) {
             lastLine = scan.nextLine();
         }
         String[] lastLineParse = lastLine.split(" ");
-        int ID = Integer.parseInt(lastLineParse[0]) + 1;
+        int id = Integer.parseInt(lastLineParse[0]) + 1;
         FileWriter writer = new FileWriter(tourneyList, true);
-        writer.write(ID + " " + name + "\n");
+        writer.write(id + " " + name + "\n");
         writer.flush();
         writer.close();
         temp.delete();
-        return ID;
+        return id;
     }
     public static String[] readStandingsFile(String fileName) throws FileNotFoundException {
         File f = new File(fileName);
         scan = new Scanner(f);
         String firstLine = scan.nextLine();
-        String[] standings = new String[getPlayerCount(firstLine)+1];
+        String[] standings = new String[getPlayerCount(firstLine) + 1];
         standings[0] = firstLine;
         int i = 1;
-        while(scan.hasNext()) {
+        while (scan.hasNext()) {
             standings[i] = scan.nextLine();
             i++;
         }
@@ -67,10 +67,10 @@ public class fileHandler {
         scan = new Scanner(f);
         String firstLine = scan.nextLine();
         int playerCount = getPlayerCount(firstLine);
-        String[] matchesAndStandings = new String[playerCount + playerCount/2 + 1];
+        String[] matchesAndStandings = new String[playerCount + (playerCount / 2) + 1];
         matchesAndStandings[0] = firstLine;
         int i = 1;
-        while(scan.hasNext()) {
+        while (scan.hasNext()) {
             matchesAndStandings[i] = scan.nextLine();
             i++;
         }
@@ -108,7 +108,7 @@ public class fileHandler {
         writer.flush();
         writer.close();
     }
-    public static int getPlayerCount(String firstLine){
+    public static int getPlayerCount(String firstLine) {
         String[] arr = firstLine.split(" ");
         return Integer.parseInt(arr[2]);
     }

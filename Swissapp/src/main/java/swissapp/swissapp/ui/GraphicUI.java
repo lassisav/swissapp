@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package swissapp.swissapp.UI;
+package swissapp.swissapp.ui;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,8 +25,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import swissapp.swissapp.applogic.appLogic;
-import swissapp.swissapp.fileHandling.fileHandler;
+import swissapp.swissapp.applogic.AppLogic;
+import swissapp.swissapp.filehandling.FileHandler;
 /**
  *
  * @author lassisav
@@ -112,7 +112,7 @@ public class GraphicUI extends Application{
     }
     public boolean newTournamentCreation() throws IOException {
         tourneyName = tourneyName.replaceAll("\\s", "");
-        tourneyID = fileHandler.setupDir(tourneyName);
+        tourneyID = FileHandler.setupDir(tourneyName);
         if (tourneyID == -1) {
             initialTopRow();
             topRow.getChildren().add(new Label("Tournament name is already in use, please select another name."));
@@ -147,7 +147,7 @@ public class GraphicUI extends Application{
         });
         finishAdd.setOnAction((ActionEvent e) -> {
             try {
-                fileNameAbsolute = appLogic.makeInitialMatchesFile(tourneyID, tourneyName, newTourneyPlayerList, rounds);
+                fileNameAbsolute = AppLogic.makeInitialMatchesFile(tourneyID, tourneyName, newTourneyPlayerList, rounds);
                 matchView();
             } catch (IOException ex) {
                 Logger.getLogger(GraphicUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -166,7 +166,7 @@ public class GraphicUI extends Application{
     public void matchView() throws FileNotFoundException {
         topRow.getChildren().clear();
         allRows.getChildren().clear();
-        String[][] matchList = appLogic.getMatches(fileNameAbsolute);
+        String[][] matchList = AppLogic.getMatches(fileNameAbsolute);
         topRow.getChildren().add(new Label(matchList[0][0] + " Round " + matchList[0][1] + "/" + matchList[0][2]));
         for (int i = 1; i < matchList.length; i++) {
             allRows.getChildren().add(new Label("Match " + matchList[i][0] + ": " + matchList[i][1] + " ("

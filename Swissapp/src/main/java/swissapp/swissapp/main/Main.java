@@ -10,13 +10,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import swissapp.swissapp.UI.GraphicUI;
+import swissapp.swissapp.ui.GraphicUI;
 
 /**
  *
  * @author lassisav
  */
-public class main {
+public class Main {
     public static void main(String[] args) throws IOException {
         File temp = new File("");
         String pathName = temp.getAbsolutePath();
