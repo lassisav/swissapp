@@ -38,7 +38,7 @@ public class AppLogic {
         if (playerArray.length % 2 == 1) {
             int x = playerArray.length - 1;
             info = playerArray[x].split(" ");
-            toCarry[toCarry.length - 1] = Integer.toString(x) + " " + info[0] + " " + info[1] + " 1 0 0 1 0 BYE"; 
+            toCarry[toCarry.length - 1] = Integer.toString(x + 1) + " " + info[0] + " " + info[1] + " 1 0 0 1 0 BYE"; 
         }
         return FileHandler.writeMatchesFile(toCarry);
     }
