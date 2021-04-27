@@ -6,6 +6,17 @@ Project review links at the bottom of this page.
 
 [Requirement specification](https://github.com/lassisav/swissapp/blob/main/documentation/reqspec.md)
 
+## Terminal commands
+
+Terminal commands should be executed in the Swissapp directory, as that is where the pom is located.
+
+### Jar generation
+
+```
+mvn package
+```
+Generates a jar-file called _Swissapp-1.0-SNAPSHOT.jar_ in Swissapp/target directory
+
 # Ohjelmistotekniikka, harjoitustyö
 
 ## Tehtävät
