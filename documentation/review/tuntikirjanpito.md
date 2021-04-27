@@ -8,3 +8,5 @@
 | 20.4. | 7    | Graafinen käyttöliittymä |
 |       |      | Turnauksen luonti |
 |       |      | Ensimmäisen kierroksen otteluparien luonti |
+| 27.4. | 5    | Otteluiden tulosten syöttäminen |
+|       |      | Sijoitus-tiedoston muodostaminen |
