@@ -81,7 +81,7 @@ public class FileHandler {
         File temp = new File("");
         String fileName = temp.getAbsolutePath();
         fileName = fileName.concat("/tourneyfiles/");
-        String[] firstLine = stringArray[1].split(" ");
+        String[] firstLine = stringArray[0].split(" ");
         fileName = fileName.concat(firstLine[1] + "/standings" + firstLine[4] + ".txt");
         writeFile(stringArray, fileName);
         temp.delete();

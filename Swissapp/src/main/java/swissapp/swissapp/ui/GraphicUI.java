@@ -15,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
@@ -37,6 +38,7 @@ public class GraphicUI extends Application{
     int rating;
     int tourneyID;
     int rounds;
+    int[] matchResults;
     Pane layout;
     HBox topRow;
     VBox allRows;
@@ -54,9 +56,11 @@ public class GraphicUI extends Application{
     Button loadTourneyButton;
     Button addPlayer;
     Button finishAdd;
+    Button submitMatches;
     String tourneyName;
     String fileNameAbsolute;
     ArrayList<String> newTourneyPlayerList;
+    ComboBox[] matchResultSelectionArray;
     public GraphicUI() {
         x = 1600;
         y = 1000;
@@ -167,10 +171,58 @@ public class GraphicUI extends Application{
         topRow.getChildren().clear();
         allRows.getChildren().clear();
         String[][] matchList = AppLogic.getMatches(fileNameAbsolute);
+        matchResultSelectionArray = new ComboBox[matchList.length];
+        for (int i = 1; i < matchResultSelectionArray.length; i++) {
+            matchResultSelectionArray[i] = new ComboBox();
+            matchResultSelectionArray[i].getItems().add("White wins");
+            matchResultSelectionArray[i].getItems().add("Drawn game");
+            matchResultSelectionArray[i].getItems().add("Black wins");
+        }
+        submitMatches = new Button("Submit matches");
+        submitMatches.setOnAction((ActionEvent e) -> {
+            matchResults = new int[matchResultSelectionArray.length];
+            boolean allBoxesSelected = iterateComboBoxesForMatches();
+            if (allBoxesSelected) {
+                try {
+                    String temp = AppLogic.makeStandingsFileFromMatchResults(fileNameAbsolute, matchResults);
+                    fileNameAbsolute = temp;
+                    standingsView();
+                } catch (IOException ex) {
+                    Logger.getLogger(GraphicUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+        });
+        allRows.getChildren().add(submitMatches);
         topRow.getChildren().add(new Label(matchList[0][0] + " Round " + matchList[0][1] + "/" + matchList[0][2]));
         for (int i = 1; i < matchList.length; i++) {
             allRows.getChildren().add(new Label("Match " + matchList[i][0] + ": " + matchList[i][1] + " ("
                     + matchList[i][2] + ") vs. " + matchList[i][3] + " (" + matchList[i][4] + ")"));
+            allRows.getChildren().add(matchResultSelectionArray[i]);
         }
+    }
+    public void standingsView() {
+        topRow.getChildren().clear();
+        allRows.getChildren().clear();
+        allRows.getChildren().add(new Label("You have successfully created a standings file (I hope). Handling standings files TBD."));
+    }
+    public boolean iterateComboBoxesForMatches() {
+        for (int i = 1; i < matchResultSelectionArray.length; i++) {
+            String selection = (String) matchResultSelectionArray[i].getValue();
+            switch (selection) {
+                case "White wins":
+                    matchResults[i] = 1;
+                    break;
+                case "Drawn game":
+                    matchResults[i] = 2;
+                    break;
+                case "Black wins":
+                    matchResults[i] = 3;
+                    break;
+                default:
+                    return false;
+            }
+        }
+        return true;
     }
 }
